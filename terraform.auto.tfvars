@@ -6,3 +6,14 @@ organizations = {
 }
 
 tfe-hostname = "tfcarl.is.hashicorpdemo.com"
+
+tfe-teams = {
+  "carlcorp-devops" = {
+    name = "devops"
+    organization = "carlcorp"
+  },
+  "carlcorp-dev" = {
+    name = "dev"
+    organization = "carlcorp"
+  },
+}

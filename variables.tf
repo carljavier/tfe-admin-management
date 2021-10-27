@@ -1,5 +1,5 @@
 variable "organizations" {
-  description = "List of Organisations to create in TFE"
+  description = "Map of Organisations to create in TFE"
   type = map(object({
       name = string
       email = string
@@ -8,4 +8,13 @@ variable "organizations" {
 
 variable "tfe-hostname" {
     description = "TFE hostname"
+}
+
+variable "tfe-teams" {
+    description = "Map teams to be created in TFE"
+    type = map(object({
+        name = string
+        organization = string
+    }))
+  
 }
