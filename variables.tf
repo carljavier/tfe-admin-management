@@ -18,3 +18,15 @@ variable "tfe-teams" {
     }))
   
 }
+
+variable "workspace-app" {
+    description = "TFE Workspace for App"
+    type = map(object({
+        name = string
+        description = string
+        tag_names = list(string)
+        terraform_version = string
+        working_directory = string
+    }))
+  
+}
