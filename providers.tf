@@ -1,3 +1,3 @@
 provider "tfe" {
-    hostname = var.tfe-hostname
+  hostname = var.tfe-hostname
 }
