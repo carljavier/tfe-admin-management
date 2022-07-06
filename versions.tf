@@ -2,7 +2,7 @@ terraform {
 
   required_providers {
     tfe = {
-      version = "~> 0.26.0"
+      version = "~> 0.32.1"
     }
   }
 }

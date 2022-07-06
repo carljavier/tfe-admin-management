@@ -1,13 +1,13 @@
 variable "organizations" {
   description = "Map of Organisations to create in TFE"
   type = map(object({
-    name  = string
     email = string
   }))
 }
 
 variable "tfe-hostname" {
   description = "TFE hostname"
+  default = "tfcarl.is.hashicorpdemo.com"
 }
 
 variable "tfe-teams" {

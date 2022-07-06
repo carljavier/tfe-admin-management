@@ -1,7 +1,12 @@
 organizations = {
   "carlcorp" = {
-    email = "carl.javier@hashicorp.com"
-    name  = "carlcorp"
+    email = "carl.javier+tfecarlcorp@hashicorp.com"
+  },
+  "hashicorp" = {
+    email = "carl.javier+tfehashicorp@hashicorp.com"
+  },
+  "dev" = {
+    email = "carl.javier+tfedev@hashicorp.com"
   }
 }
 
