@@ -37,6 +37,10 @@ module "gcp-team" {
   organization   = data.tfe_organization.teamcarljavier.name
 }
 
+output "gcp-team" {
+  value = module.gcp-team.teamname
+
+}
 
 module "app-service" {
   source         = "./modules/teams"

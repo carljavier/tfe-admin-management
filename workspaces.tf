@@ -55,28 +55,28 @@ resource "tfe_workspace" "appB" {
 
 # Example using https://registry.terraform.io/modules/alexbasista/workspacer/tfe module
 # Seperating out your workspace creation makes sense as this way, you can add more workspace settings
-# module "teamappX-workspace" {
-#   source  = "alexbasista/workspacer/tfe"
-#   version = "0.2.0"
-#   # insert the 7 required variables here
+module "teamappX-workspace" {
+  source  = "alexbasista/workspacer/tfe"
+  version = "0.3.0"
+  # insert the 7 required variables here
 
-#   organization   = data.tfe_organization.teamcarljavier.name
-#   workspace_name = "App-Workspace-Dev"
-#   workspace_desc = "Description of my new TFE Workspace."
-#   workspace_tags = ["experiment", "dev", "sharedservice"]
+  organization   = data.tfe_organization.teamcarljavier.name
+  workspace_name = "App-Workspace-Dev"
+  workspace_desc = "Description of my new TFE Workspace."
+  workspace_tags = ["experiment", "dev", "sharedservice"]
 
-#   terraform_version = "1.2.3"
+  terraform_version = "1.2.1"
 
-#   # Chicken and Egg issue here when setting this from the get go. 
-#   # No dependency on Teams created so this module does not know if these teams actually exist or not.
-#   # team_access = {
-#   #   "azure-sharedservices-users" = "plan"
-#   #   "app-service-users"          = "read"
-#   # }
+  # Chicken and Egg issue here when setting this from the get go. 
+  # No dependency on Teams created so this module does not know if these teams actually exist or not.
+  team_access = {
+    "${tfe_team.teamnoworkspaces.name}" = "plan"
+    "${module.gcp-team.teamname}"       = "read"
+  }
 
-#   tfvars = {
-#     teststring = "iamstring"
-#     testlist   = ["1", "2", "3"]
-#     testmap    = { "a" = "1", "b" = "2", "c" = "3" }
-#   }
-# }
+  tfvars = {
+    teststring = "iamstring"
+    testlist   = ["1", "2", "3"]
+    testmap    = { "a" = "1", "b" = "2", "c" = "3" }
+  }
+}

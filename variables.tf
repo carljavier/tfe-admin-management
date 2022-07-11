@@ -7,7 +7,7 @@ variable "organizations" {
 
 variable "tfe-hostname" {
   description = "TFE hostname"
-  default = "tfcarl.is.hashicorpdemo.com"
+  default     = "tfcarl.is.hashicorpdemo.com"
 }
 
 variable "tfe-teams" {
