@@ -1,5 +1,5 @@
 module "tfrun-functions" {
-  source = "../common-functions/tfrun-functions.sentinel"
+  source = "./tfrun-functions.sentinel"
 }
 
 policy "restrict-aws-instances-type-and-tag" {

@@ -11,7 +11,7 @@ ec2_instances = filter tfplan.resource_changes as _, rc {
 mandatory_tags = [
     "Name",
     "CostCentre",
-    "SourceCode"
+    "SourceCode",
 ]
 
 # Allowed Types

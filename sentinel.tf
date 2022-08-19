@@ -16,12 +16,12 @@ resource "tfe_policy_set" "aws" {
 }
 
 
-resource "tfe_policy_set" "cloud_agnostic" {
-  name          = "cloud-agnostic-policy"
-  description   = "Cloud Agnostic Policies"
-  policies_path = "./cloud-agnostic"
-  organization  = data.tfe_organization.teamcarljavier.name
-  workspace_ids = [tfe_workspace.app2.id]
+# resource "tfe_policy_set" "cloud_agnostic" {
+#   name          = "cloud-agnostic-policy"
+#   description   = "Cloud Agnostic Policies"
+#   policies_path = "./cloud-agnostic"
+#   organization  = data.tfe_organization.teamcarljavier.name
+#   workspace_ids = [tfe_workspace.app2.id]
 
-  slug = data.tfe_slug.policies
-}
+#   slug = data.tfe_slug.policies
+# }
