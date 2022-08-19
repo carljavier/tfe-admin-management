@@ -1,0 +1,24 @@
+{
+  "data": {
+    "type": "policy-sets",
+    "attributes": {
+      "name": "aws",
+      "description": "This set contains policies that should be checked on all aws infrastructure workspaces.",
+      "global": false,
+      "policies-path": null,
+      "vcs-repo": {
+        "branch": "master",
+        "identifier": "hashicorp/my-policy-sets",
+        "ingress-submodules": false,
+        "oauth-token-id": "ot-7Fr9d83jWsi8u23A"
+      }
+    },
+    "relationships": {
+      "workspaces": {
+        "data": [
+          { "id": "ws-2HRvNs49EWPjDqT1", "type": "workspaces" }
+        ]
+      }
+    }
+  }
+}
