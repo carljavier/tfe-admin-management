@@ -6,8 +6,8 @@ resource "tfe_workspace" "app" {
 
 
 data "tfe_agent_pool" "aws-pool" {
-  name          = "aws-sydney"
-  organization  = tfe_organization.org["carlcorp"].name
+  name         = "aws-sydney"
+  organization = tfe_organization.org["carlcorp"].name
 
 }
 
@@ -15,7 +15,7 @@ resource "tfe_workspace" "app2" {
   name         = "app-magic2"
   organization = tfe_organization.org["carlcorp"].name
   tag_names    = ["test", "app2"]
-  agent_pool_id = data.tfe_agent_pool.aws-pool.id
+  # agent_pool_id = data.tfe_agent_pool.aws-pool.id
 }
 
 
