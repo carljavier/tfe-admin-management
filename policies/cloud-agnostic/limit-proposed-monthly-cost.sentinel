@@ -8,8 +8,10 @@ import "tfrun-functions" as run
 # The standard decimal import
 import "decimal"
 
+param maxCost default 400
+
 # Monthly Limit
-limit = decimal.new(400)
+limit = decimal.new(maxCost)
 
 # Call the validation function
 # Warnings will be printed for violations

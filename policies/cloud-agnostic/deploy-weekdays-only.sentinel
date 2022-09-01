@@ -1,11 +1,23 @@
 import "time"
 
+# Load Time
+currentTime = time.now
+
+# Validate day is Monday - Friday
 is_weekday = rule {
-	time.now.weekday_name not in ["Saturday", "Sunday"]
+	currentTime.weekday_name not in ["Saturday", "Sunday"]
 	}
-is_open_hours = rule {
-	time.now.hour > 8 and time.now.hour < 17
+
+# Validate time is between 10 AM and 6 PM AEST
+is_open_hours_aest1 = rule {
+	(currentTime.hour >= 0 and time.now.hour <= 8)
 	}
+
+# Validate time is between 7am AM and 10 AM AEST
+is_open_hours_aest2 = rule {
+	(currentTime.hour >= 21 and time.now.hour <= 23)
+	}
+
 main = rule {
-	is_open_hours and is_weekday
+	(is_open_hours_aest1 or is_open_hours_aest2) and is_weekday
 }
