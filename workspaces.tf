@@ -18,6 +18,13 @@ resource "tfe_workspace" "app2" {
   # agent_pool_id = data.tfe_agent_pool.aws-pool.id
 }
 
+#Migrate workspace to TFC
+resource "tfe_workspace" "tfe-tfc-api-migrate" {
+  name         = "tfe-tfc-api-migrate"
+  organization = tfe_organization.org["carlcorp"].name
+  tag_names    = ["test", "migrate"]
+}
+
 
 
 resource "tfe_workspace" "app-dev" {
@@ -95,3 +102,4 @@ module "teamappX-workspace" {
     testmap    = { "a" = "1", "b" = "2", "c" = "3" }
   }
 }
+
